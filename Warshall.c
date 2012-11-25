@@ -9,7 +9,7 @@ void Warshall(int ** tab, int sommets)
 	      for(j = 0; j < sommets; j++)
 	         cpy_tab[i][j] = cpy_tab[i][j] || (cpy_tab[i][k] && cpy_tab[k][j]);
 	
-	afficherMatrice(cpy_tab,sommets);
+	//afficherMatrice(cpy_tab,sommets);
 }
 void FloydWarshall(int ** tab, int sommets)
 {
@@ -40,6 +40,6 @@ void FloydWarshall(int ** tab, int sommets)
 	   for(j = 0; j < sommets; j++)
 	   	if(cpy_tab[i][j] == -1 )
 	   		cpy_tab[i][j] = 0;
-	afficherMatrice(cpy_tab,sommets);   		
+	//afficherMatrice(cpy_tab,sommets);   		
 
 }
