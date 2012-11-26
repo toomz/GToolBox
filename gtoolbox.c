@@ -3,6 +3,25 @@
 
 // test 
 
+void supprimer_arete(int **matrice, int sommet1, int sommet2 )
+{
+	matrice[sommet1][sommet2]=0;
+	matrice[sommet2][sommet1]=0;
+	return;
+}
+
+void ajouter_arete(int **matrice, int sommet1, int sommet2, int nb )
+{
+	matrice[sommet1][sommet2]=nb;
+	matrice[sommet2][sommet1]=nb;
+	return;
+}
+
+int lecture_arete(int **matrice, int sommet1, int sommet2)
+{
+	return(matrice(sommet1,sommet2));
+}
+
 int main(int argc, char* argv[]){
 	
 	int nb_sommets ;
