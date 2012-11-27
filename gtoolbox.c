@@ -18,13 +18,22 @@ int** create_mat(int nb_som) {
 	// Remplissage de la matrice 
 	for(i=0; i<nb_som; i++){
 		
-		int tmp, som;
-		printf("Nombre de sommets reliés au sommet %d \n", i+1);
-		scanf("%d", &tmp);
-		
+		int tmp = 0;
+		int som = 0;
+		while(tmp = 0 || tmp < 0){
+			printf("Nombre de sommets reliés au sommet %d \n", i+1);
+			scanf("%d", &tmp);
+			if (tmp < 0)
+				fprintf(stderr, "Problème, nombre de sommets négatif...");
+		}
+				
 		for (j=0; j<tmp; j++){
-			printf("Sommet relié à %d \n", i+1);
-			scanf("%d", &som);
+			while(som = 0 || som > nb_som || som < 0){
+				printf("Sommet relié à %d \n", i+1);
+				scanf("%d", &som);
+				if (tmp < 0)
+				fprintf(stderr, "Ce sommet n'existe pas...");
+			}
 			mat[i][som] = 1;
 		}
 		
@@ -35,12 +44,17 @@ int** create_mat(int nb_som) {
 
 int main(int argc, char* argv[]){
 	
-	int nb_sommets, i, j ;
-	printf("Voyez entrer les nombre de sommets souhaités : \n");
-	scanf("%d", &nb_sommets);
+	int nb_sommets = 0;
+	int i, j ;
+	while(nb_sommets = 0 || nb_sommets < 0){
+		printf("Voyez entrer les nombre de sommets souhaités : \n");
+		scanf("%d", &nb_sommets);
+		if(nb_sommets < 0){
+			fprintf(stderr, "Le nombre de sommets ne peut pas être négatif...");
+		}
+	}
 	
 	int **matrice = NULL ;
-	
 	matrice = create_mat(nb_sommets);
 	
 	
