@@ -20,7 +20,7 @@ int** create_mat(int nb_som) {
 		
 		int tmp = 0;
 		int som = 0;
-		while(tmp = 0 || tmp < 0){
+		while((tmp == 0) || (tmp < 0)){
 			printf("Nombre de sommets reliés au sommet %d \n", i+1);
 			scanf("%d", &tmp);
 			if (tmp < 0)
@@ -28,7 +28,7 @@ int** create_mat(int nb_som) {
 		}
 				
 		for (j=0; j<tmp; j++){
-			while(som = 0 || som > nb_som || som < 0){
+			while((som == 0) || (som > nb_som) || (som < 0)){
 				printf("Sommet relié à %d \n", i+1);
 				scanf("%d", &som);
 				if (tmp < 0)
@@ -56,7 +56,7 @@ void ajouter_arete(int **matrice, int sommet1, int sommet2, int nb ){
 }
 
 int lecture_arete(int **matrice, int sommet1, int sommet2){
-	return(matrice(sommet1,sommet2));
+	return(matrice[sommet1][sommet2]);
 }
 
 
@@ -65,7 +65,7 @@ int main(int argc, char* argv[]){
 	
 	int nb_sommets = 0;
 	int i, j ;
-	while(nb_sommets = 0 || nb_sommets < 0){
+	while((nb_sommets == 0) || (nb_sommets < 0)){
 		printf("Voyez entrer les nombre de sommets souhaités : \n");
 		scanf("%d", &nb_sommets);
 		if(nb_sommets < 0){
