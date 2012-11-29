@@ -71,6 +71,42 @@ int lecture_arete(int **matrice, int sommet1, int sommet2){
 	return(matrice[sommet1][sommet2]);
 }
 
+int** ajouter_sommet(int **matrice, int nb_som){//le sommet est ajouté à la fin de la matrice
+	int** mat = malloc( (nb_som+1)*sizeof(int*) );
+	int i, j ;
+	// Initialisation de la matrice à 0
+	for(i=0; i<nb_som+1; i++){
+		mat[i] = malloc( nb_som*sizeof(int*) );
+		for(j=0; j<nb_som+1; j++){
+			mat[i][j] = 0 ;
+		}
+	}
+	//recopiage de la matrice
+	for (i=0;i<nb_som;i++){
+		for(j=0;j<nb_som;j++){
+			mat[i][j]=matrice[i][j];
+		}
+	}
+	return mat;
+}
+
+int** enlever_sommet(int **matrice, int nb_som, int numero_som){
+	int** mat = malloc( (nb_som-1)*sizeof(int*) );
+	int i=0, j=0 ;
+	// Initialisation de la matrice à 0
+	while(i<nb_som){
+		mat[i] = malloc( (nb_som-1)*sizeof(int*) );
+		if(i!=numero){
+		while(j<nb_som{
+			if (j!=numero)
+			{mat[i][j] = matrice[i][j] ;}
+			j++;
+		}
+		}
+		i++;
+	}
+	return mat;
+}
 
 
 int main(int argc, char* argv[]){
